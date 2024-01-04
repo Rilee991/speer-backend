@@ -1,4 +1,4 @@
-const { isEmpty, isNull, isUndefined, trim } = require("lodash");
+const { isEmpty, isNull, isUndefined } = require("lodash");
 const mongoose = require("mongoose");
 
 const Note = require("../../models/Note");
