@@ -1,8 +1,16 @@
-on: push
+on: 
+  push:
+    
 jobs:
   build-node:
     runs-on: ubuntu-latest
     container: node:16
+    env:
+      PORT: ${{ secrets.PORT }}
+      NODE_ENV: ${{ secrets.NODE_ENV }}
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      JWT_EXPIRY: ${{ secrets.JWT_EXPIRY }}
     steps:
       - run: node --version
       - run: npm --version
