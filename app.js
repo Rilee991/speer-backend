@@ -13,18 +13,35 @@ db.on("error", (err) => {
     console.log(`Cannot connect to db with error: ${err.message}`);
 });
 
-db.once("open", async () => {
-    console.log(`Connected to db`);
-    const app = express();
+// db.once("open", async () => {
+//     console.log(`Connected to db`);
+//     const app = express();
 
-    configureMiddleware(app);
-    app.use("/speerapis/", apiRoutes());
+//     configureMiddleware(app);
+//     app.use("/speerapis/", apiRoutes());
 
-    const PORT = process.env.PORT || 3000;
+//     const PORT = process.env.PORT || 3000;
 
-    app.listen(PORT, () => {
-        console.log(`App started on PORT: ${PORT}`);
-    }).on("error", (err) => {
-        console.log(`Couldn't start application with error: ${err.message}`);
+//     app.listen(PORT, () => {
+//         console.log(`App started on PORT: ${PORT}`);
+//     }).on("error", (err) => {
+//         console.log(`Couldn't start application with error: ${err.message}`);
+//     });
+// });
+const app = express();
+configureMiddleware(app);
+app.use("/speerapis/", apiRoutes());
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`App started on PORT: ${PORT}`);
+
+    db.once("open", async () => {
+        console.log(`Connected to db`);
     });
+}).on("error", (err) => {
+    console.log(`Couldn't start application with error: ${err.message}`);
 });
+
+module.exports = app;
