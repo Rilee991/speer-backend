@@ -51,6 +51,8 @@ const createNote = async (req, res) => {
         const userId = req.user._id;
         const { title = "", description = "" } = req.body;
 
+        if(!title && !description)  return new Error("Title or description must be present");
+
         await Note.create({ title, description, owner: userId, isDeleted: false, updatedBy: userId });
 
         return res.status(200).json({ error: false, message: "Note created successfully." });
@@ -221,7 +223,7 @@ const searchNotes = async (req, res) => {
 
         return res.status(200).json({ error: false, message: notes });
     } catch(err) {
-        return res.status(400).json({ error: true, message: err.message });
+        return res.status(401).json({ error: true, message: err.message });
     }
 }
 
