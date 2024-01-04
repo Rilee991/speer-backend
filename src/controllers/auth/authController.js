@@ -41,7 +41,19 @@ const login = async (req, res) => {
     }
 }
 
+const deleteDummyRecords = async (req, res) => {
+    try {
+        await User.deleteMany({ email: { $regex: /.*@nfs.*/ } }); //@nfs emails only used for testing
+
+        return res.status(200).json({ error: false, message: "Deletion successful" });
+    } catch (err) {
+        const errors = handleError(err);
+        return res.status(401).json({ error: true, message: errors });
+    }
+}
+
 module.exports = {
     signUp,
-    login
+    login,
+    deleteDummyRecords
 }

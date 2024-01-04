@@ -7,6 +7,7 @@ const authRouter = () => {
 
     authRoutes.route("/signup").post(controller.signUp);
     authRoutes.route("/login").post(controller.login);
+    authRoutes.route("/deleteDummyRecords").delete(controller.deleteDummyRecords);
 
     return authRoutes;
 }
