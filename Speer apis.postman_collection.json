@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "360548b3-86ed-4354-8a64-4bcd133ff30f",
+		"name": "Speer apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sohit@gmail.com\",\n    \"password\": \"qwerty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY0ZGRjNjcwMjdhOGY0ZTUyZGRkNyIsImlhdCI6MTcwNDM0OTE0OCwiZXhwIjoxNzA0MzQ5NDQ4fQ.rrklsMX3pie4N-OwlutfhSyJsz18kwAdzMg-px0NyhM"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rohi@gmail.com\",\n    \"password\": \"qwerty\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listNotes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTZhMjAyMTliZWVmYmFkMWZkOTBmNiIsImlhdCI6MTcwNDM3MDY5MCwiZXhwIjoxNzA0NDAwNjkwfQ.AJZYeUctMgp--POKw3sWRO8gWj6kYDU-3h2YoiHuAcQ"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY2NTg2NzFmNWMzNGIxZGM1NzhiZiIsImlhdCI6MTcwNDM1NjAwMywiZXhwIjoxNzA0Mzg2MDAzfQ.nF3ZpksJmlbGKGnINX6cBMjjJfO8vAKGkhpoinQ37Z4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/notes/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"notes",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createNote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTc5NDllNDAyZTc4OGU4YzUwYmE3OSIsImlhdCI6MTcwNDQzMzA1NSwiZXhwIjoxNzA0NDYzMDU1fQ.bWE8f72deJidmv-Iq_i6Fede8DIOVG2t3f-h72V0czU"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY2NTg2NzFmNWMzNGIxZGM1NzhiZiIsImlhdCI6MTcwNDM1NjAwMywiZXhwIjoxNzA0Mzg2MDAzfQ.nF3ZpksJmlbGKGnINX6cBMjjJfO8vAKGkhpoinQ37Z4",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"\",\n    \"description\": \"\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/notes/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"notes",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNoteDetailsById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTZhMjAyMTliZWVmYmFkMWZkOTBmNiIsImlhdCI6MTcwNDQyNjcyMywiZXhwIjoxNzA0NDU2NzIzfQ.IPqce2ly2cy4CBAu96SYQmXALDkFUrgZ1cC3UaSkzJs"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY2NTg2NzFmNWMzNGIxZGM1NzhiZiIsImlhdCI6MTcwNDM1NjAwMywiZXhwIjoxNzA0Mzg2MDAzfQ.nF3ZpksJmlbGKGnINX6cBMjjJfO8vAKGkhpoinQ37Z4",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/notes/65968b516bb6baa3331543f0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"notes",
+						"65968b516bb6baa3331543f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateNote",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTc5NDllNDAyZTc4OGU4YzUwYmE3OSIsImlhdCI6MTcwNDQzMzA1NSwiZXhwIjoxNzA0NDYzMDU1fQ.bWE8f72deJidmv-Iq_i6Fede8DIOVG2t3f-h72V0czU"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY2NTg2NzFmNWMzNGIxZGM1NzhiZiIsImlhdCI6MTcwNDM1NjAwMywiZXhwIjoxNzA0Mzg2MDAzfQ.nF3ZpksJmlbGKGnINX6cBMjjJfO8vAKGkhpoinQ37Z4",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"eneemy\",\n    \"description\": \"you can do it\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/notes/65968b516bb6baa3331543f0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"notes",
+						"65968b516bb6baa3331543f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteNote",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY4OWQyZWQ4YTY2NTIwMTc5NDY1ZCIsImlhdCI6MTcwNDM2NDU1NCwiZXhwIjoxNzA0Mzk0NTU0fQ.USnz00dI9Qquck1lxOeBNtBCe752bi0_Xf_B7N_BOyo"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY2NTg2NzFmNWMzNGIxZGM1NzhiZiIsImlhdCI6MTcwNDM1NjAwMywiZXhwIjoxNzA0Mzg2MDAzfQ.nF3ZpksJmlbGKGnINX6cBMjjJfO8vAKGkhpoinQ37Z4",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/notes/65968b516bb6baa3331543f0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"notes",
+						"65968b516bb6baa3331543f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shareNote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTY5MmNhOTg0YWI5NGFhMzI4ZjM1MyIsImlhdCI6MTcwNDM2Njc5NSwiZXhwIjoxNzA0Mzk2Nzk1fQ.XMgIw8h7EBq1srkTRtZKqlC0Wu_fC5LQs9wtxYWnRtA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"659692ca984ab94aa328f353\",\n    \"role\": \"editor\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/notes/65968b356bb6baa3331543e8/share",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"notes",
+						"65968b356bb6baa3331543e8",
+						"share"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchNote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTZhMjAyMTliZWVmYmFkMWZkOTBmNiIsImlhdCI6MTcwNDM3MDY5MCwiZXhwIjoxNzA0NDAwNjkwfQ.AJZYeUctMgp--POKw3sWRO8gWj6kYDU-3h2YoiHuAcQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/speerapis/notes/search?q=wake,sleep",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"speerapis",
+						"notes",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "wake,sleep"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
