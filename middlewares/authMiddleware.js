@@ -18,7 +18,6 @@ const authenticateToken = (req, res, next) => {
         if(!user) return res.status(400).json({ error: true, message: "User doesnt exists." });
 
         req.user = user;
-        console.log(user);
         next();
     })
 }
